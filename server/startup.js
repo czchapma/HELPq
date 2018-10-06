@@ -92,6 +92,7 @@ function addFacebookIntegration(fb){
     },{
       $set: {
         appId: fb.appId,
+        clientId : fb.clientId, 
         secret: fb.secret
       }
     });
