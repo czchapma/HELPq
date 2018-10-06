@@ -3,6 +3,11 @@ Template.login.onCreated(function(){
 });
 
 Template.login.events({
+  'click #login-google': function(){
+    Meteor.loginWithGoogle({
+      loginStyle: 'redirect'
+    });
+  },
   'click #login-github': function(){
     Meteor.loginWithGithub({
       loginStyle: 'redirect'
