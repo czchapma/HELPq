@@ -1,1 +1,24 @@
 // Put any SCSS or CSS here to override styles
+ol.ui.list, .ui.ordered.list, .ui.ordered.list .list, ol.ui.list ol {
+    counter-reset: ordered;
+    margin-left: 1.5rem;
+    list-style-type: none;
+}
+
+ol.ui.list li:before, .ui.ordered.list .list>.item:before, .ui.ordered.list>.item:before {
+    position: absolute;
+    top: auto;
+    left: -5px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    margin-left: -1.25rem;
+    counter-increment: ordered;
+    content: counters(ordered, ".") " ";
+    text-align: right;
+    color: rgba(0, 0, 0, 0.87);
+    vertical-align: middle;
+    opacity: 0.8;
+}
